@@ -1,6 +1,8 @@
-package mu.edu;
-	
 //student class with private fields
+package mu.edu;
+
+
+	
 public class Student {
 	private int id;
 	private String name;

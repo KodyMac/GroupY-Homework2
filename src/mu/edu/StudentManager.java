@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class StudentManager {
 	private Student[] students;
-	
-	public StudentManager(int size) {
-		students = new Student[size];
+	public StudentManager() {
+		students = new Student[calculateArraySize("studentData.txt")];
 	}
+	
 	
 	public boolean readFromFile(String fileName) throws FileNotFoundException {  //not sure how this goes
 		File file = new File(fileName);
@@ -63,4 +63,20 @@ public class StudentManager {
 		}
 		return false;
 			}
+	
+	
+	public int calculateArraySize(String fileName) {
+        int lines = 0;
+
+        try (Scanner scanner = new Scanner(new File(fileName))) {
+            while (scanner.hasNextLine()) {
+                scanner.nextLine();
+                lines++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return lines;
+    }
 }
