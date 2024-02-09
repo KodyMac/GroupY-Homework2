@@ -1,11 +1,12 @@
 package mu.edu;
 
+import java.io.FileNotFoundException;
+
 import mu.edu.Student;
 import mu.edu.StudentManager;
-import mu.edu
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// Instantiate StudentManager, perform operations based on the requirements.
 	    StudentManager studentManager = new StudentManager();
 	    // Read student data from a file and initialize Student objects.
